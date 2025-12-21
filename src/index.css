@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Government-style base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gov-light text-gov-dark font-sans antialiased;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold text-gov-primary;
+    line-height: 1.3;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+
+  a {
+    @apply text-gov-secondary hover:text-gov-primary underline transition-colors duration-200;
+  }
+
+  /* Focus states for accessibility */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-gov-secondary;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-gov-secondary text-white font-semibold rounded 
+           hover:bg-gov-primary focus:outline-none focus:ring-2 focus:ring-gov-secondary focus:ring-offset-2 
+           transition-colors duration-200 no-underline disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-white text-gov-secondary font-semibold rounded 
+           border-2 border-gov-secondary hover:bg-gov-light focus:outline-none focus:ring-2 
+           focus:ring-gov-secondary focus:ring-offset-2 transition-colors duration-200 no-underline
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-gov-error text-white font-semibold rounded 
+           hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-gov-error focus:ring-offset-2 
+           transition-colors duration-200 no-underline disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-gov p-6 border border-gov-border;
+  }
+
+  .card-elevated {
+    @apply bg-white rounded-lg shadow-gov-lg p-6 border border-gov-border;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border-2 border-gov-border rounded bg-white text-gov-dark 
+           focus:border-gov-secondary focus:outline-none transition-colors duration-200;
+  }
+
+  .label {
+    @apply block text-sm font-semibold text-gov-dark mb-2;
+  }
+
+  .alert-success {
+    @apply bg-green-50 border-l-4 border-gov-success text-green-800 p-4 rounded;
+  }
+
+  .alert-error {
+    @apply bg-red-50 border-l-4 border-gov-error text-red-800 p-4 rounded;
+  }
+
+  .alert-warning {
+    @apply bg-amber-50 border-l-4 border-gov-warning text-amber-800 p-4 rounded;
+  }
+
+  .alert-info {
+    @apply bg-blue-50 border-l-4 border-gov-secondary text-blue-800 p-4 rounded;
+  }
+
+  /* Government banner stripe */
+  .gov-banner {
+    @apply bg-gov-primary text-white py-1 text-center text-sm font-semibold;
+  }
+
+  /* Skip link for accessibility */
+  .skip-link {
+    @apply absolute -top-10 left-0 bg-gov-primary text-white px-4 py-2 z-50 
+           focus:top-0 transition-all duration-200;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
