@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { documentsApi, publicApi } from '../services/api';
+import { documentsApi } from '../services/api';
 import { LoadingSpinner, Alert, EmptyState, FileUpload } from '../components/UI';
 import type { Document } from '../types';
 
@@ -66,8 +66,8 @@ const Documents: React.FC = () => {
   };
 
   const copyShareLink = (doc: Document) => {
-    const apiBaseUrl = 'https://pdf-backend-xi.vercel.app';
-    const shareUrl = `${apiBaseUrl}/uploads/portal/user_documents/${doc.uuid}/${encodeURIComponent(doc.original_filename || doc.name || '')}`;
+    const baseUrl = window.location.origin;
+    const shareUrl = `${baseUrl}/uploads/portal/user_documents/${doc.uuid}`;
     navigator.clipboard.writeText(shareUrl);
     setUploadSuccess(`Link copied to clipboard!`);
     setTimeout(() => setUploadSuccess(null), 3000);
@@ -185,7 +185,7 @@ const Documents: React.FC = () => {
                     {doc.file_size ? `${(doc.file_size / 1024).toFixed(1)} KB` : 'N/A'}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {new Date(doc.upload_timestamp || doc.upload_date).toLocaleDateString()}
+                    {new Date(doc.upload_timestamp || doc.upload_date || Date.now()).toLocaleDateString()}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                     <div className="flex items-center justify-end space-x-2">
@@ -209,7 +209,7 @@ const Documents: React.FC = () => {
                         </svg>
                       </Link>
                       <a
-                        href={`https://pdf-backend-xi.vercel.app/uploads/portal/user_documents/${doc.uuid}/${encodeURIComponent(doc.original_filename || doc.name || '')}`}
+                        href={`/uploads/portal/user_documents/${doc.uuid}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-green-600 hover:text-green-800 p-2"

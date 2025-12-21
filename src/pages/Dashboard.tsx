@@ -48,7 +48,7 @@ const Dashboard: React.FC = () => {
   };
 
   const recentDocuments = documents.slice(0, 5);
-  const totalSize = documents.reduce((acc, doc) => acc + doc.file_size, 0);
+  const totalSize = documents.reduce((acc, doc) => acc + (doc.file_size || 0), 0);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -168,12 +168,12 @@ const Dashboard: React.FC = () => {
                           {doc.name}
                         </p>
                         <p className="text-xs text-gray-500">
-                          {(doc.file_size / 1024).toFixed(1)} KB
+                          {doc.file_size ? (doc.file_size / 1024).toFixed(1) : 'N/A'} KB
                         </p>
                       </div>
                     </div>
                     <span className="text-xs text-gray-400">
-                      {new Date(doc.upload_date).toLocaleDateString()}
+                      {new Date(doc.upload_timestamp || doc.upload_date || Date.now()).toLocaleDateString()}
                     </span>
                   </div>
                 </Link>

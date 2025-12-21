@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { documentsApi, publicApi } from '../services/api';
+import { documentsApi } from '../services/api';
 import { LoadingSpinner, Alert } from '../components/UI';
 import type { Document } from '../types';
 
@@ -51,8 +51,8 @@ const DocumentDetails: React.FC = () => {
   const copyShareLink = () => {
     if (!document) return;
     
-    const apiBaseUrl = 'https://pdf-backend-xi.vercel.app';
-    const shareUrl = `${apiBaseUrl}/uploads/portal/user_documents/${document.uuid}/${encodeURIComponent(document.original_filename || document.name || '')}`;
+    const baseUrl = window.location.origin;
+    const shareUrl = `${baseUrl}/uploads/portal/user_documents/${document.uuid}`;
     navigator.clipboard.writeText(shareUrl);
     setCopySuccess(true);
     setTimeout(() => setCopySuccess(false), 3000);
@@ -80,11 +80,11 @@ const DocumentDetails: React.FC = () => {
     );
   }
 
-  const apiBaseUrl = 'https://pdf-backend-xi.vercel.app';
-  const pdfPath = `/uploads/portal/user_documents/${document.uuid}/${encodeURIComponent(document.original_filename || document.name || '')}`;
-  const embedUrl = `${apiBaseUrl}${pdfPath}`;
-  const downloadUrl = `${apiBaseUrl}${pdfPath}`;
-  const shareUrl = `${apiBaseUrl}${pdfPath}`;
+  const baseUrl = window.location.origin;
+  const pdfPath = `/uploads/portal/user_documents/${document.uuid}`;
+  const embedUrl = pdfPath;
+  const downloadUrl = pdfPath;
+  const shareUrl = `${baseUrl}${pdfPath}`;
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -144,7 +144,7 @@ const DocumentDetails: React.FC = () => {
               <div>
                 <dt className="text-sm text-gray-500">Upload Date</dt>
                 <dd className="text-sm font-medium text-gray-900">
-                  {new Date(document.upload_timestamp || document.upload_date).toLocaleString()}
+                  {new Date(document.upload_timestamp || document.upload_date || Date.now()).toLocaleString()}
                 </dd>
               </div>
               <div>
