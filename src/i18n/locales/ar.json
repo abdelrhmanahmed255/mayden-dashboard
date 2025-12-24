@@ -1,0 +1,219 @@
+{
+  "app": {
+    "title": "لوحة التحكم",
+    "description": "نظام إدارة المستندات"
+  },
+  "nav": {
+    "dashboard": "لوحة التحكم",
+    "documents": "المستندات",
+    "login": "تسجيل الدخول",
+    "logout": "تسجيل الخروج",
+    "register": "إنشاء حساب"
+  },
+  "auth": {
+    "login": {
+      "title": "تسجيل الدخول",
+      "subtitle": "قم بتسجيل الدخول إلى حسابك",
+      "username": "اسم المستخدم",
+      "password": "كلمة المرور",
+      "button": "تسجيل الدخول",
+      "loading": "جارٍ تسجيل الدخول...",
+      "noAccount": "ليس لديك حساب؟",
+      "registerLink": "إنشاء حساب جديد",
+      "demoLink": "تسجيل دخول تجريبي"
+    },
+    "register": {
+      "title": "إنشاء حساب جديد",
+      "subtitle": "إنشاء حساب مسؤول جديد",
+      "username": "اسم المستخدم",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "button": "إنشاء حساب",
+      "loading": "جارٍ إنشاء الحساب...",
+      "haveAccount": "لديك حساب بالفعل؟",
+      "loginLink": "تسجيل الدخول"
+    },
+    "demo": {
+      "title": "تسجيل دخول تجريبي",
+      "subtitle": "اختر مستخدمًا للتجربة",
+      "admin": "مسؤول",
+      "user": "مستخدم",
+      "button": "تسجيل الدخول كـ",
+      "backToLogin": "العودة لتسجيل الدخول"
+    }
+  },
+  "dashboard": {
+    "title": "لوحة التحكم",
+    "welcome": "مرحبًا بك",
+    "overview": "نظرة عامة",
+    "totalDocuments": "إجمالي المستندات",
+    "recentUploads": "التحميلات الأخيرة",
+    "quickActions": "إجراءات سريعة",
+    "uploadDocument": "رفع مستند",
+    "viewAll": "عرض الكل",
+    "statistics": {
+      "title": "الإحصائيات",
+      "documents": "المستندات",
+      "users": "المستخدمين",
+      "storage": "المساحة المستخدمة"
+    }
+  },
+  "documents": {
+    "title": "المستندات",
+    "count": "مستند في مكتبتك",
+    "count_plural": "مستندات في مكتبتك",
+    "uploadButton": "رفع مستند",
+    "simpleUpload": "رفع بسيط",
+    "splitUpload": "رفع مقسم",
+    "search": "البحث في المستندات",
+    "filter": "تصفية",
+    "sort": "ترتيب",
+    "table": {
+      "document": "المستند",
+      "type": "النوع",
+      "size": "الحجم",
+      "uploaded": "تاريخ الرفع",
+      "actions": "الإجراءات"
+    },
+    "actions": {
+      "view": "عرض",
+      "download": "تحميل",
+      "share": "مشاركة",
+      "delete": "حذف",
+      "edit": "تعديل"
+    },
+    "types": {
+      "firstPage": "الصفحة الأولى",
+      "remainingPages": "الصفحات المتبقية",
+      "merged": "المستند المدمج",
+      "document": "مستند"
+    },
+    "upload": {
+      "title": "رفع مستند جديد",
+      "simple": {
+        "title": "رفع بسيط",
+        "description": "رفع ملف PDF مباشرة"
+      },
+      "split": {
+        "title": "رفع مقسم",
+        "description": "رفع ملف PDF لتقسيمه وإضافة رموز QR ودمجه تلقائيًا",
+        "chooseFile": "اختر ملف PDF",
+        "dragDrop": "أو اسحب وأفلت",
+        "settings": "إعدادات رمز QR",
+        "pageNumber": "رقم الصفحة",
+        "qrSize": "حجم رمز QR (بكسل)",
+        "xPosition": "الموضع الأفقي",
+        "yPosition": "الموضع الرأسي",
+        "upload": "رفع ومعالجة",
+        "uploading": "جارٍ المعالجة...",
+        "success": "تم الرفع بنجاح!",
+        "successMessage": "تم تقسيم ملف PDF وإضافة رموز QR ودمجه بنجاح. تم إنشاء ثلاثة مستندات:",
+        "uploadAnother": "رفع مستند آخر",
+        "close": "إغلاق"
+      }
+    },
+    "empty": {
+      "title": "لا توجد مستندات بعد",
+      "description": "قم برفع أول ملف PDF لديك للبدء",
+      "action": "رفع مستند"
+    },
+    "delete": {
+      "confirm": "هل أنت متأكد من حذف",
+      "success": "تم الحذف بنجاح",
+      "error": "فشل الحذف"
+    }
+  },
+  "documentDetails": {
+    "title": "تفاصيل المستند",
+    "backToDocuments": "العودة إلى المستندات",
+    "details": {
+      "title": "تفاصيل المستند",
+      "filename": "اسم الملف",
+      "uuid": "المعرف الفريد",
+      "type": "نوع المستند",
+      "parentUuid": "المعرف الأصلي",
+      "uploadDate": "تاريخ الرفع",
+      "hitCount": "عدد المشاهدات",
+      "fileSize": "حجم الملف"
+    },
+    "shareLink": {
+      "title": "رابط المشاركة",
+      "description": "رابط عام للوصول إلى هذا المستند",
+      "copy": "نسخ رابط المشاركة",
+      "copied": "تم نسخ الرابط!"
+    },
+    "actions": {
+      "title": "الإجراءات",
+      "download": "تحميل PDF",
+      "openNewTab": "فتح في تبويب جديد",
+      "delete": "حذف المستند",
+      "deleting": "جارٍ الحذف..."
+    },
+    "related": {
+      "title": "المستندات ذات الصلة",
+      "id": "الرقم التعريفي"
+    }
+  },
+  "common": {
+    "loading": "جارٍ التحميل...",
+    "error": "خطأ",
+    "success": "نجاح",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "back": "رجوع",
+    "next": "التالي",
+    "previous": "السابق",
+    "search": "بحث",
+    "filter": "تصفية",
+    "sort": "ترتيب",
+    "actions": "الإجراءات",
+    "yes": "نعم",
+    "no": "لا",
+    "ok": "موافق",
+    "copy": "نسخ",
+    "copied": "تم النسخ",
+    "close": "إغلاق",
+    "open": "فتح",
+    "view": "عرض",
+    "download": "تحميل",
+    "upload": "رفع",
+    "share": "مشاركة",
+    "select": "اختيار",
+    "selected": "محدد",
+    "all": "الكل",
+    "none": "لا شيء",
+    "file": "ملف",
+    "files": "ملفات",
+    "kb": "كيلوبايت",
+    "mb": "ميجابايت",
+    "gb": "جيجابايت"
+  },
+  "errors": {
+    "generic": "حدث خطأ ما",
+    "network": "خطأ في الشبكة",
+    "unauthorized": "غير مصرح",
+    "forbidden": "محظور",
+    "notFound": "غير موجود",
+    "serverError": "خطأ في الخادم",
+    "validationError": "خطأ في التحقق",
+    "uploadFailed": "فشل الرفع",
+    "downloadFailed": "فشل التحميل",
+    "deleteFailed": "فشل الحذف",
+    "fetchFailed": "فشل جلب البيانات",
+    "invalidFile": "ملف غير صالح",
+    "fileTooLarge": "الملف كبير جدًا",
+    "noFileSelected": "لم يتم اختيار ملف",
+    "selectPdfFile": "الرجاء اختيار ملف PDF"
+  },
+  "alerts": {
+    "linkCopied": "تم نسخ الرابط إلى الحافظة!",
+    "uuidCopied": "تم نسخ المعرف الفريد!",
+    "urlCopied": "تم نسخ الرابط!",
+    "uploadSuccess": "تم الرفع بنجاح",
+    "deleteSuccess": "تم الحذف بنجاح",
+    "updateSuccess": "تم التحديث بنجاح",
+    "splitUploadSuccess": "تم الرفع المقسم بنجاح! تم إنشاء ثلاثة مستندات."
+  }
+}

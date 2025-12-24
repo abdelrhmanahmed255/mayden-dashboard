@@ -6,7 +6,7 @@ var API_URL = 'https://pdf-backend-xi.vercel.app';
 export default defineConfig({
     plugins: [react()],
     server: {
-        port: 3001,
+        port: 3000,
         proxy: {
             // Proxy /uploads/portal/user_documents/* to backend /download/* endpoint
             '/uploads/portal/user_documents': {

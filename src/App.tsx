@@ -1,37 +1,38 @@
 import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Layout } from './components/Layout';
 import ProtectedRoute from './components/ProtectedRoute';
 import { 
   Dashboard, 
   DocumentDetails, 
   Documents,
+  DemoLogin,
   Login,
   Register
 } from './pages';
 
 function App() {
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    // Set HTML dir and lang attributes based on current language
+    const isRtl = i18n.language === 'ar';
+    document.documentElement.dir = isRtl ? 'rtl' : 'ltr';
+    document.documentElement.lang = i18n.language;
+  }, [i18n.language]);
+
   return (
     <Routes>
-      {/* Admin Login */}
-      <Route path="/" element={
-        <Layout>
-          <Login />
-        </Layout>
-      } />
-      <Route path="/login" element={
-        <Layout>
-          <Login />
-        </Layout>
-      } />
-      {/* Admin Register */}
-      <Route path="/register" element={
-        <Layout>
-          <Register />
-        </Layout>
-      } />
+      {/* Demo Login - Default Page */}
+      <Route path="/" element={<DemoLogin />} />
       
-      {/* Protected Dashboard Pages */}
-      <Route path="/dashboard" element={
+      {/* Admin Login with API */}
+      <Route path="/dashboard" element={<Login />} />
+      <Route path="/dashboard/register" element={<Register />} />
+      
+      {/* Protected Admin Dashboard Pages */}
+      <Route path="/admin/dashboard" element={
         <Layout>
           <ProtectedRoute>
             <Dashboard />
@@ -39,7 +40,7 @@ function App() {
         </Layout>
       } />
       {/* Documents List */}
-      <Route path="/documents" element={
+      <Route path="/admin/documents" element={
         <Layout>
           <ProtectedRoute>
             <Documents />
@@ -47,7 +48,7 @@ function App() {
         </Layout>
       } />
       {/* Document Details */}
-      <Route path="/documents/:id" element={
+      <Route path="/admin/documents/:id" element={
         <Layout>
           <ProtectedRoute>
             <DocumentDetails />

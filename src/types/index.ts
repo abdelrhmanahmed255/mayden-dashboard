@@ -7,6 +7,8 @@ export interface Document {
   storage_url: string;
   upload_timestamp: string;
   hit_count: number;
+  parent_uuid?: string | null;
+  document_type?: string;
   // Legacy fields for backwards compatibility
   name?: string;
   file_size?: number;
@@ -23,6 +25,21 @@ export interface DocumentUploadResponse {
 export interface DocumentListResponse {
   documents: Document[];
   total: number;
+  page?: number;
+  page_size?: number;
+}
+
+export interface SplitUploadParams {
+  remaining_qr_page?: number;
+  remaining_qr_x?: number;
+  remaining_qr_y?: number;
+  remaining_qr_size?: number;
+}
+
+export interface SplitUploadResponse {
+  first_page_document: Document;
+  remaining_pages_document: Document;
+  merged_document: Document;
 }
 
 // Document View Response (from /view/{uuid} endpoint)

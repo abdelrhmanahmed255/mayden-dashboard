@@ -7,24 +7,50 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Government-style color palette
+        // Modern DocuFlow color palette
+        primary: {
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8',
+          500: '#0ea5e9',
+          600: '#0284c7',
+          700: '#0369a1',
+          800: '#075985',
+          900: '#0c4a6e',
+        },
+        secondary: {
+          50: '#faf5ff',
+          100: '#f3e8ff',
+          200: '#e9d5ff',
+          300: '#d8b4fe',
+          400: '#c084fc',
+          500: '#a855f7',
+          600: '#9333ea',
+          700: '#7e22ce',
+          800: '#6b21a8',
+          900: '#581c87',
+        },
+        // Legacy gov colors mapped to new palette for compatibility
         gov: {
-          primary: '#1a4480',      // Deep navy blue
-          secondary: '#005ea2',    // Primary blue
-          accent: '#0071bc',       // Light accent blue
-          dark: '#1b1b1b',         // Near black
-          light: '#f0f0f0',        // Light gray background
+          primary: '#0369a1',
+          secondary: '#9333ea',
+          accent: '#0ea5e9',
+          dark: '#0f172a',
+          light: '#f8fafc',
           white: '#ffffff',
-          success: '#00a91c',      // Green for success
-          error: '#d63e04',        // Red/orange for errors
-          warning: '#ffbe2e',      // Amber for warnings
-          muted: '#71767a',        // Muted gray text
-          border: '#dfe1e2',       // Border color
+          success: '#10b981',
+          error: '#ef4444',
+          warning: '#f59e0b',
+          muted: '#64748b',
+          border: '#e2e8f0',
         }
       },
       fontFamily: {
-        sans: ['Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Roboto', 'Arial', 'sans-serif'],
-        serif: ['Merriweather', 'Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],
+        sans: ['Cairo', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['Cairo', 'Space Grotesk', 'Inter', 'sans-serif'],
+        serif: ['Merriweather', 'Georgia', 'serif'],
       },
       boxShadow: {
         'gov': '0 2px 4px rgba(0, 0, 0, 0.1)',
@@ -32,5 +58,7 @@ export default {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-rtl'),
+  ],
 }

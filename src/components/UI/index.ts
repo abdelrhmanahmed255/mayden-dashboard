@@ -2,3 +2,4 @@ export { default as Alert } from './Alert';
 export { default as LoadingSpinner } from './LoadingSpinner';
 export { default as EmptyState } from './EmptyState';
 export { default as FileUpload } from './FileUpload';
+export { default as SplitUpload } from './SplitUpload';

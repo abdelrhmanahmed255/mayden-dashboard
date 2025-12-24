@@ -1,0 +1,223 @@
+{
+  "app": {
+    "title": "Government Dashboard",
+    "description": "Document Management System"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "documents": "Documents",
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Register"
+  },
+  "auth": {
+    "login": {
+      "title": "Login",
+      "subtitle": "Sign in to your account",
+      "username": "Username",
+      "password": "Password",
+      "button": "Sign In",
+      "loading": "Signing in...",
+      "noAccount": "Don't have an account?",
+      "registerLink": "Create one",
+      "demoLink": "Demo Login"
+    },
+    "register": {
+      "title": "Create Account",
+      "subtitle": "Register a new admin account",
+      "username": "Username",
+      "email": "Email",
+      "password": "Password",
+      "button": "Create Account",
+      "loading": "Creating account...",
+      "haveAccount": "Already have an account?",
+      "loginLink": "Sign in"
+    },
+    "demo": {
+      "title": "Demo Login",
+      "subtitle": "Choose a user to experience",
+      "admin": "Admin",
+      "user": "User",
+      "button": "Login as",
+      "backToLogin": "Back to Login"
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome",
+    "overview": "Overview",
+    "totalDocuments": "Total Documents",
+    "recentUploads": "Recent Uploads",
+    "quickActions": "Quick Actions",
+    "uploadDocument": "Upload Document",
+    "viewAll": "View All",
+    "statistics": {
+      "title": "Statistics",
+      "documents": "Documents",
+      "users": "Users",
+      "storage": "Storage Used"
+    }
+  },
+  "documents": {
+    "title": "Documents",
+    "count": "document in your library",
+    "count_plural": "documents in your library",
+    "uploadButton": "Upload Document",
+    "simpleUpload": "Simple Upload",
+    "splitUpload": "Split Upload",
+    "search": "Search documents",
+    "filter": "Filter",
+    "sort": "Sort",
+    "table": {
+      "document": "Document",
+      "type": "Type",
+      "size": "Size",
+      "uploaded": "Uploaded",
+      "actions": "Actions"
+    },
+    "actions": {
+      "view": "View",
+      "download": "Download",
+      "share": "Share",
+      "delete": "Delete",
+      "edit": "Edit"
+    },
+    "types": {
+      "firstPage": "First Page",
+      "remainingPages": "Remaining Pages",
+      "merged": "Merged Document",
+      "document": "Document"
+    },
+    "upload": {
+      "title": "Upload New Document",
+      "simple": {
+        "title": "Simple Upload",
+        "description": "Upload a PDF file directly"
+      },
+      "split": {
+        "title": "Split Upload",
+        "description": "Upload a PDF to split, add QR codes, and merge automatically",
+        "chooseFile": "Choose a PDF file",
+        "dragDrop": "or drag and drop",
+        "settings": "QR Code Settings",
+        "pageNumber": "Page Number",
+        "qrSize": "QR Size (px)",
+        "qrSizeHelp": "Size of QR code",
+        "xPosition": "X Position",
+        "xPositionHelp": "Horizontal position",
+        "yPosition": "Y Position",
+        "yPositionHelp": "Vertical position",
+        "pageHelp": "QR code page position",
+        "upload": "Upload & Process",
+        "uploading": "Processing...",
+        "success": "Upload Successful!",
+        "successMessage": "Your PDF has been split, QR codes added, and merged successfully. Three documents were created:",
+        "uploadAnother": "Upload Another Document",
+        "close": "Close"
+      }
+    },
+    "empty": {
+      "title": "No documents yet",
+      "description": "Upload your first PDF document to get started",
+      "action": "Upload Document"
+    },
+    "delete": {
+      "confirm": "Are you sure you want to delete",
+      "success": "Successfully deleted",
+      "error": "Failed to delete"
+    }
+  },
+  "documentDetails": {
+    "title": "Document Details",
+    "backToDocuments": "Back to Documents",
+    "details": {
+      "title": "Document Details",
+      "filename": "Filename",
+      "uuid": "UUID",
+      "type": "Document Type",
+      "parentUuid": "Parent UUID",
+      "uploadDate": "Upload Date",
+      "hitCount": "Hit Count",
+      "fileSize": "File Size"
+    },
+    "shareLink": {
+      "title": "Share Link",
+      "description": "Public URL to access this document",
+      "copy": "Copy Share Link",
+      "copied": "Share link copied to clipboard!"
+    },
+    "actions": {
+      "title": "Actions",
+      "download": "Download PDF",
+      "openNewTab": "Open in New Tab",
+      "delete": "Delete Document",
+      "deleting": "Deleting..."
+    },
+    "related": {
+      "title": "Related Documents",
+      "id": "ID"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "actions": "Actions",
+    "yes": "Yes",
+    "no": "No",
+    "ok": "OK",
+    "copy": "Copy",
+    "copied": "Copied",
+    "close": "Close",
+    "open": "Open",
+    "view": "View",
+    "download": "Download",
+    "upload": "Upload",
+    "share": "Share",
+    "select": "Select",
+    "selected": "Selected",
+    "all": "All",
+    "none": "None",
+    "file": "File",
+    "files": "Files",
+    "kb": "KB",
+    "mb": "MB",
+    "gb": "GB"
+  },
+  "errors": {
+    "generic": "Something went wrong",
+    "network": "Network error",
+    "unauthorized": "Unauthorized",
+    "forbidden": "Forbidden",
+    "notFound": "Not found",
+    "serverError": "Server error",
+    "validationError": "Validation error",
+    "uploadFailed": "Upload failed",
+    "downloadFailed": "Download failed",
+    "deleteFailed": "Delete failed",
+    "fetchFailed": "Failed to fetch data",
+    "invalidFile": "Invalid file",
+    "fileTooLarge": "File too large",
+    "noFileSelected": "No file selected",
+    "selectPdfFile": "Please select a PDF file"
+  },
+  "alerts": {
+    "linkCopied": "Link copied to clipboard!",
+    "uuidCopied": "UUID copied!",
+    "urlCopied": "URL copied!",
+    "uploadSuccess": "Successfully uploaded",
+    "deleteSuccess": "Successfully deleted",
+    "updateSuccess": "Successfully updated",
+    "splitUploadSuccess": "Split upload successful! Three documents created."
+  }
+}

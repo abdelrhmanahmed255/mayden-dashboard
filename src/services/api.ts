@@ -3,6 +3,8 @@ import type {
   DocumentUploadResponse, 
   DocumentListResponse, 
   DocumentViewResponse,
+  SplitUploadParams,
+  SplitUploadResponse,
   User, 
   AuthResponse, 
   LoginRequest, 
@@ -15,7 +17,7 @@ import type {
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://pdf-backend-xi.vercel.app';
 
 // Public base URL for PDF documents - auto-detects from environment or current host
-const PUBLIC_BASE_URL = import.meta.env.VITE_PUBLIC_URL || (typeof window !== 'undefined' ? window.location.origin : 'https://www.maydenfz.ae');
+const PUBLIC_BASE_URL = import.meta.env.VITE_PUBLIC_URL || (typeof window !== 'undefined' ? window.location.origin : 'https://www.meydanfze.ae');
 
 // Get the current app base URL (for constructing public-facing URLs)
 export const getAppBaseUrl = (): string => {
@@ -136,10 +138,42 @@ export const documentsApi = {
   },
 
   /**
-   * List all documents
+   * Upload a PDF document with split processing
+   * Splits PDF into first page and remaining pages, adds QR codes, and merges
    */
-  list: async (): Promise<DocumentListResponse> => {
-    return apiRequest<DocumentListResponse>('/documents/');
+  uploadSplit: async (file: File, params?: SplitUploadParams): Promise<SplitUploadResponse> => {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    // Build query string from params
+    const queryParams = new URLSearchParams();
+    if (params?.remaining_qr_page !== undefined) {
+      queryParams.append('remaining_qr_page', params.remaining_qr_page.toString());
+    }
+    if (params?.remaining_qr_x !== undefined) {
+      queryParams.append('remaining_qr_x', params.remaining_qr_x.toString());
+    }
+    if (params?.remaining_qr_y !== undefined) {
+      queryParams.append('remaining_qr_y', params.remaining_qr_y.toString());
+    }
+    if (params?.remaining_qr_size !== undefined) {
+      queryParams.append('remaining_qr_size', params.remaining_qr_size.toString());
+    }
+
+    const queryString = queryParams.toString();
+    const endpoint = `/documents/upload-split${queryString ? `?${queryString}` : ''}`;
+
+    return apiRequest<SplitUploadResponse>(endpoint, {
+      method: 'POST',
+      body: formData,
+    });
+  },
+
+  /**
+   * List all documents with pagination
+   */
+  list: async (page = 1, pageSize = 10): Promise<DocumentListResponse> => {
+    return apiRequest<DocumentListResponse>(`/documents/?page=${page}&page_size=${pageSize}`);
   },
 
   /**
@@ -204,7 +238,7 @@ export const publicApi = {
 
   /**
    * Get full document URL with public base URL
-   * Format: https://www.maydenfz.ae/uploads/portal/user_documents/{documentUuid}/{filename}
+   * Format: https://www.meydanfze.ae/uploads/portal/user_documents/{documentUuid}/{filename}
    */
   getFullDocumentUrl: (documentUuid: string, filename: string): string => {
     return `${PUBLIC_BASE_URL}/uploads/portal/user_documents/${documentUuid}/${encodeURIComponent(filename)}`;

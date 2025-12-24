@@ -1,9 +1,9 @@
 {
-  "name": "gov-dashboard",
+  "name": "docuflow-dashboard",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Meyden Free Zone Admin Dashboard - Document Management System",
+  "description": "DocuFlow - Modern Document Management System",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -11,9 +11,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "i18next": "^25.7.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.28.0"
+    "react-i18next": "^16.5.0",
+    "react-router-dom": "^6.28.0",
+    "tailwindcss-rtl": "^0.9.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
