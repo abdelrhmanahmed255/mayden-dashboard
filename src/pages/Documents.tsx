@@ -231,7 +231,7 @@ const Documents: React.FC = () => {
                         </div>
                         <div className="min-w-0 flex-1">
                           <Link
-                            to={`/admin/documents/${doc.id}`}
+                            to={`/sys-admin-portal/documents/${doc.id}`}
                             className="text-sm font-medium text-gray-900 hover:text-blue-600 block truncate"
                           >
                             {doc.original_filename || doc.name}
@@ -258,7 +258,7 @@ const Documents: React.FC = () => {
                           </svg>
                         </button>
                         <Link
-                          to={`/admin/documents/${doc.id}`}
+                          to={`/sys-admin-portal/documents/${doc.id}`}
                           className="text-blue-600 hover:text-blue-700 p-2"
                           title="View document"
                         >
@@ -312,7 +312,7 @@ const Documents: React.FC = () => {
                     </div>
                     <div className="min-w-0 flex-1">
                       <Link
-                        to={`/admin/documents/${doc.id}`}
+                        to={`/sys-admin-portal/documents/${doc.id}`}
                         className="text-sm font-semibold text-gray-900 hover:text-blue-600 block"
                       >
                         {doc.original_filename || doc.name}
@@ -346,7 +346,7 @@ const Documents: React.FC = () => {
                       <span className="text-xs mt-1">{t('documents.actions.share')}</span>
                     </button>
                     <Link
-                      to={`/admin/documents/${doc.id}`}
+                      to={`/sys-admin-portal/documents/${doc.id}`}
                       className="flex flex-col items-center justify-center p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
                       title="View"
                     >

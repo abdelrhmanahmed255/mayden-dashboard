@@ -9,7 +9,6 @@ import {
   Documents,
   DemoLogin,
   Login,
-  Register
 } from './pages';
 
 function App() {
@@ -27,12 +26,11 @@ function App() {
       {/* Demo Login - Default Page */}
       <Route path="/" element={<DemoLogin />} />
       
-      {/* Admin Login with API */}
-      <Route path="/dashboard" element={<Login />} />
-      <Route path="/dashboard/register" element={<Register />} />
+      {/* Admin Login with API - Secured Path */}
+      <Route path="/sys-auth-portal" element={<Login />} />
       
       {/* Protected Admin Dashboard Pages */}
-      <Route path="/admin/dashboard" element={
+      <Route path="/sys-admin-portal/overview" element={
         <Layout>
           <ProtectedRoute>
             <Dashboard />
@@ -40,7 +38,7 @@ function App() {
         </Layout>
       } />
       {/* Documents List */}
-      <Route path="/admin/documents" element={
+      <Route path="/sys-admin-portal/documents" element={
         <Layout>
           <ProtectedRoute>
             <Documents />
@@ -48,7 +46,7 @@ function App() {
         </Layout>
       } />
       {/* Document Details */}
-      <Route path="/admin/documents/:id" element={
+      <Route path="/sys-admin-portal/documents/:id" element={
         <Layout>
           <ProtectedRoute>
             <DocumentDetails />

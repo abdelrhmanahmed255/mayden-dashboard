@@ -100,7 +100,7 @@ const DocumentDetails: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 py-8">
         <Alert type="error" message={error || 'Document not found'} />
         <Link
-          to="/admin/documents"
+          to="/sys-admin-portal/documents"
           className="mt-4 inline-block text-blue-600 hover:text-blue-700"
         >
           ← Back to Documents
@@ -124,7 +124,7 @@ const DocumentDetails: React.FC = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
       {/* Breadcrumb */}
       <nav className="mb-4 sm:mb-6">
-        <Link to="/admin/documents" className="text-blue-600 hover:text-blue-700 text-sm sm:text-base">
+        <Link to="/sys-admin-portal/documents" className="text-blue-600 hover:text-blue-700 text-sm sm:text-base">
           ← Back to Documents
         </Link>
       </nav>
@@ -171,7 +171,7 @@ const DocumentDetails: React.FC = () => {
                   return (
                     <Link
                       key={relDoc.id}
-                      to={`/admin/documents/${relDoc.id}`}
+                      to={`/sys-admin-portal/documents/${relDoc.id}`}
                       className="block p-4 border border-gray-200 rounded-lg hover:border-blue-500 hover:shadow-md transition-all"
                     >
                       <div className="flex items-start space-x-3">

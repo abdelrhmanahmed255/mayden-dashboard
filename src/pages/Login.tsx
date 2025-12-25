@@ -22,7 +22,7 @@ const Login: React.FC = () => {
     e.preventDefault();
     try {
       await login(formData);
-      navigate('/admin/dashboard');
+      navigate('/sys-admin-portal/overview');
     } catch {
       // Error is handled by AuthContext
     }
@@ -141,18 +141,8 @@ const Login: React.FC = () => {
             </button>
           </form>
 
-          {/* Register Link */}
-          <div className="mt-6 text-center">
-            <p className="text-gray-600">
-              Don't have an admin account?{' '}
-              <Link to="/dashboard/register" className="text-blue-600 font-semibold hover:underline">
-                Register here
-              </Link>
-            </p>
-          </div>
-
           {/* Back to Portal */}
-          <div className="mt-4 pt-4 border-t border-gray-200 text-center">
+          <div className="mt-6 pt-4 border-t border-gray-200 text-center">
             <Link to="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-blue-600 text-sm">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />

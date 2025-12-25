@@ -26,12 +26,12 @@ const Footer: React.FC = () => {
             <h4 className="font-semibold mb-2 text-gray-200">Quick Links</h4>
             <ul className="space-y-1 text-sm text-gray-400">
               <li>
-                <a href="/dashboard" className="hover:text-blue-400 transition-colors">
+                <a href="/sys-admin-portal/overview" className="hover:text-blue-400 transition-colors">
                   Dashboard
                 </a>
               </li>
               <li>
-                <a href="/admin/documents" className="hover:text-blue-400 transition-colors">
+                <a href="/sys-admin-portal/documents" className="hover:text-blue-400 transition-colors">
                   Documents
                 </a>
               </li>

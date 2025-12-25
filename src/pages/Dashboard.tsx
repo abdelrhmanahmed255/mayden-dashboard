@@ -181,7 +181,7 @@ const Dashboard: React.FC = () => {
 
             <div className="pt-4 border-t border-blue-100">
               <Link
-                to="/admin/documents"
+                to="/sys-admin-portal/documents"
                 className="flex items-center justify-center text-blue-600 hover:text-blue-700 font-medium gap-2"
               >
                 <span>{t('dashboard.viewAll')}</span>
@@ -198,7 +198,7 @@ const Dashboard: React.FC = () => {
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xl font-bold text-gray-900">{t('dashboard.recentUploads')}</h2>
             <Link
-              to="/admin/documents"
+              to="/sys-admin-portal/documents"
               className="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center gap-1"
             >
               {t('dashboard.viewAll')}

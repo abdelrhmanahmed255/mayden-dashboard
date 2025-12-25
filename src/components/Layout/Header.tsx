@@ -37,9 +37,9 @@ const Header: React.FC = () => {
             {isLoggedIn ? (
               <>
                 <Link
-                  to="/admin/dashboard"
+                  to="/sys-admin-portal/overview"
                   className={`px-4 py-2 rounded-lg transition-all duration-200 ${
-                    isActive('/admin/dashboard')
+                    isActive('/sys-admin-portal/overview')
                       ? 'bg-blue-500 text-white shadow-lg'
                       : 'text-blue-100 hover:bg-blue-500/20'
                   }`}
@@ -47,9 +47,9 @@ const Header: React.FC = () => {
                   {t('nav.dashboard')}
                 </Link>
                 <Link
-                  to="/admin/documents"
+                  to="/sys-admin-portal/documents"
                   className={`px-4 py-2 rounded-lg transition-all duration-200 ${
-                    isActive('/admin/documents') || location.pathname.startsWith('/admin/documents/')
+                    isActive('/sys-admin-portal/documents') || location.pathname.startsWith('/sys-admin-portal/documents/')
                       ? 'bg-blue-500 text-white shadow-lg'
                       : 'text-blue-100 hover:bg-blue-500/20'
                   }`}
@@ -58,28 +58,16 @@ const Header: React.FC = () => {
                 </Link>
               </>
             ) : (
-              <>
-                <Link
-                  to="/dashboard"
-                  className={`px-4 py-2 rounded-lg transition-all duration-200 ${
-                    isActive('/dashboard')
-                      ? 'bg-blue-500 text-white shadow-lg'
-                      : 'text-blue-100 hover:bg-blue-500/20'
-                  }`}
-                >
-                  {t('nav.login')}
-                </Link>
-                <Link
-                  to="/dashboard/register"
-                  className={`px-4 py-2 rounded-lg transition-all duration-200 ${
-                    isActive('/dashboard/register')
-                      ? 'bg-blue-500 text-white shadow-lg'
-                      : 'text-blue-100 hover:bg-blue-500/20'
-                  }`}
-                >
-                  {t('nav.register')}
-                </Link>
-              </>
+              <Link
+                to="/sys-auth-portal"
+                className={`px-4 py-2 rounded-lg transition-all duration-200 ${
+                  isActive('/sys-auth-portal')
+                    ? 'bg-blue-500 text-white shadow-lg'
+                    : 'text-blue-100 hover:bg-blue-500/20'
+                }`}
+              >
+                {t('nav.login')}
+              </Link>
             )}
           </nav>
 
